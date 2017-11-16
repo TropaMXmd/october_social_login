@@ -1,0 +1,6 @@
+FROM php:7.0.22-fpm
+
+RUN apt-get update && apt-get install -y git zlib1g-dev postgresql postgresql-contrib libpq-dev libpng-dev libmcrypt-dev mysql-client \
+    && docker-php-ext-install mcrypt pdo_mysql pdo_pgsql gd zip
+
+WORKDIR /var/www
